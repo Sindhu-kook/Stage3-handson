@@ -1,0 +1,324 @@
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git branch
+* master
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git branch GitNewBranch
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git branch
+  GitNewBranch
+* master
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git checkout GitNewBranch
+Switched to branch 'GitNewBranch'
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitNewBranch)
+$ git branch
+* GitNewBranch
+  master
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitNewBranch)
+$ vi file2.txt
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitNewBranch)
+$ git status
+On branch GitNewBranch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.log
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitNewBranch)
+$ git add .
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitNewBranch)
+$ git commit -m "added file2.txt"
+[GitNewBranch dfe613d] added file2.txt
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.log
+ create mode 100644 file2.txt
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitNewBranch)
+$ git status
+On branch GitNewBranch
+nothing to commit, working tree clean
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitNewBranch)
+$ git push origin GitNewBranch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 293 bytes | 36.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'GitNewBranch' on GitHub by visiting:
+remote:      https://github.com/Sindhu-kook/githandsons/pull/new/GitNewBranch
+remote:
+To https://github.com/Sindhu-kook/githandsons
+ * [new branch]      GitNewBranch -> GitNewBranch
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitNewBranch)
+$ git log --oneline GitNewBranch
+dfe613d (HEAD -> GitNewBranch, origin/GitNewBranch) added file2.txt
+b467b43 (origin/master, master) first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitNewBranch)
+$ git log --oneline master
+b467b43 (origin/master, master) first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitNewBranch)
+$ git checkout master
+Switched to branch 'master'
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git ls-l files
+git: 'ls-l' is not a git command. See 'git --help'.
+
+The most similar command is
+        ls-files
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git ls-files
+welcome.txt
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git merge GitNewBranch
+Updating b467b43..dfe613d
+Fast-forward
+ file1.log | 0
+ file2.txt | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.log
+ create mode 100644 file2.txt
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git log --oneline master
+dfe613d (HEAD -> master, origin/GitNewBranch, GitNewBranch) added file2.txt
+b467b43 (origin/master) first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Sindhu-kook/githandsons
+   b467b43..dfe613d  master -> master
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git branch
+  GitNewBranch
+* master
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git branch GitWork
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git branch
+  GitNewBranch
+  GitWork
+* master
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git checkout GitWork
+Switched to branch 'GitWork'
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitWork)
+$ vi hello.xml
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitWork)
+$ git log --oneline GitWork
+dfe613d (HEAD -> GitWork, origin/master, origin/GitNewBranch, master, GitNewBranch) added file2.txt
+b467b43 first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitWork)
+$ git log --oneline master
+dfe613d (HEAD -> GitWork, origin/master, origin/GitNewBranch, master, GitNewBranch) added file2.txt
+b467b43 first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitWork)
+$ git add .
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitWork)
+$ git commit -m "added hello.xml"
+[GitWork b57d47f] added hello.xml
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 hello.xml
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitWork)
+$ git log --oneline GitWork
+b57d47f (HEAD -> GitWork) added hello.xml
+dfe613d (origin/master, origin/GitNewBranch, master, GitNewBranch) added file2.txt
+b467b43 first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitWork)
+$ git log --oneline master
+dfe613d (origin/master, origin/GitNewBranch, master, GitNewBranch) added file2.txt
+b467b43 first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitWork)
+$ git checkout master
+Switched to branch 'master'
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ vi hello.xml
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ gir add .
+bash: gir: command not found
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git add .
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git commit -m "added hello.xml from master branch"
+[master 0a93d6a] added hello.xml from master branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 hello.xml
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git log --oneline master
+0a93d6a (HEAD -> master) added hello.xml from master branch
+dfe613d (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+b467b43 first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git log --oneline GitWork
+b57d47f (GitWork) added hello.xml
+dfe613d (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+b467b43 first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git diff
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git diff hello.xml
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ vi hello.xml
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git diff hello.xml
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git log --oneline --graph --decorate
+* 0a93d6a (HEAD -> master) added hello.xml from master branch
+* dfe613d (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+* b467b43 first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git log --oneline master
+0a93d6a (HEAD -> master) added hello.xml from master branch
+dfe613d (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+b467b43 first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git commit -m "modified hello.xml from master"
+On branch master
+nothing to commit, working tree clean
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git add .
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git commit -m "modified hello.xml from master"
+On branch master
+nothing to commit, working tree clean
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git log --oneline master
+0a93d6a (HEAD -> master) added hello.xml from master branch
+dfe613d (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+b467b43 first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git log --oneline GitWork
+b57d47f (GitWork) added hello.xml
+dfe613d (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+b467b43 first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git checkout GitWork
+Switched to branch 'GitWork'
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (GitWork)
+$ git checkout master
+Switched to branch 'master'
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git merge GitWork
+Merge made by the 'recursive' strategy.
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ cat hello.xml
+<<<<<<< HEAD
+Data added from master branch
+modified file from master branch
+=======
+Data added from GitWork branch
+>>>>>>> GitWork
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git log --oneline master
+4f9f6f5 (HEAD -> master) Merge branch 'GitWork'
+0a93d6a added hello.xml from master branch
+b57d47f (GitWork) added hello.xml
+dfe613d (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+b467b43 first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git add .
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git commit -m "hello.xml merged"
+On branch master
+nothing to commit, working tree clean
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git log --oneline master
+4f9f6f5 (HEAD -> master) Merge branch 'GitWork'
+0a93d6a added hello.xml from master branch
+b57d47f (GitWork) added hello.xml
+dfe613d (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+b467b43 first commit
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ cat hello.xml
+<<<<<<< HEAD
+Data added from master branch
+modified file from master branch
+=======
+Data added from GitWork branch
+>>>>>>> GitWork

@@ -1,0 +1,84 @@
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons
+$ git version
+git version 2.31.1.windows.1
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons
+$ git config --global user.name "Sindhu R"
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons
+$ git config --global user.email "sindhu.rajendran1999@gmail.com"
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons
+$ git config --global --list
+user.name=Sindhu R
+user.email=sindhu.rajendran1999@gmail.com
+filter.lfs.required=true
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons
+$ git init
+Initialized empty Git repository in C:/git handsons/.git/
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ ls -al
+total 12
+drwxr-xr-x 1 LENOVO 197609 0 Jun  9 17:45 ./
+drwxr-xr-x 1 LENOVO 197609 0 Jun  9 17:42 ../
+drwxr-xr-x 1 LENOVO 197609 0 Jun  9 17:45 .git/
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ echo "Welcome to the version control" >> welcome.txt
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ ls -al
+total 13
+drwxr-xr-x 1 LENOVO 197609  0 Jun  9 17:45 ./
+drwxr-xr-x 1 LENOVO 197609  0 Jun  9 17:42 ../
+drwxr-xr-x 1 LENOVO 197609  0 Jun  9 17:45 .git/
+-rw-r--r-- 1 LENOVO 197609 31 Jun  9 17:45 welcome.txt
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ cat welcome.txt
+Welcome to the version control
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        welcome.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git add welcome.txt
+warning: LF will be replaced by CRLF in welcome.txt.
+The file will have its original line endings in your working directory
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git commit -m "first commit"
+[master (root-commit) b467b43] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 welcome.txt
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git remote add origin https://github.com/Sindhu-kook/githandsons
+
+LENOVO@LAPTOP-5T5DHI0G MINGW64 /c/git handsons (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 252 bytes | 50.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Sindhu-kook/githandsons
+ * [new branch]      master -> master
